@@ -11,11 +11,12 @@
 // (x, y) is the bottom left corner of the rect
 typedef struct
 {
-    float x;
-    float y;
-    float w;
-    float h;
-} rect_t;
+  float x;
+  float y;
+  float w;
+  float h;
+}
+rect_t;
 
 
 // The area of the rectangle
@@ -40,7 +41,7 @@ float cgRectPerimeter(const rect_t* r);
 void cgRectCenter(vec2_t* result, const rect_t* r);
 
 // Moves the rectangle so that it is centered at the given vec2
-void cgRectCenterAt(rect_t* r, const vec2_t* v);
+void cgRectCenterAt(rect_t* r, const vec2_t* center);
 
 
 #endif // CGEO_RECT_H_

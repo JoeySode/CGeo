@@ -10,18 +10,19 @@
 // A 2D vector class using floats to store its x and y values
 typedef struct
 {
-    float x;
-    float y;
-} vec2_t;
+  float x;
+  float y;
+}
+vec2_t;
 
 
-#define CG_VEC2_ZERO    (vec2_t){ 0.0f, 0.0f };
-#define CG_VEC2_ONE     (vec2_t){ 1.0f, 1.0f };
+#define CG_VEC2_ZERO  (vec2_t){ 0.0f, 0.0f };
+#define CG_VEC2_ONE   (vec2_t){ 1.0f, 1.0f };
 
-#define CG_VEC2_LEFT    (vec2_t){ -1.0f, 0.0f };
-#define CG_VEC2_RIGHT   (vec2_t){ 1.0f, 0.0f };
-#define CG_VEC2_DOWN    (vec2_t){ 0.0f, -1.0f };
-#define CG_VEC2_UP      (vec2_t){ 0.0f, 1.0f };
+#define CG_VEC2_LEFT  (vec2_t){ -1.0f, 0.0f };
+#define CG_VEC2_RIGHT (vec2_t){ 1.0f, 0.0f };
+#define CG_VEC2_DOWN  (vec2_t){ 0.0f, -1.0f };
+#define CG_VEC2_UP    (vec2_t){ 0.0f, 1.0f };
 
 
 // The angle in radians of the vec2

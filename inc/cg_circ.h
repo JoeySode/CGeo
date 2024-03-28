@@ -11,10 +11,11 @@
 // (x, y) is the center of the circle
 typedef struct
 {
-    float x;
-    float y;
-    float r;
-} circ_t;
+  float x;
+  float y;
+  float r;
+}
+circ_t;
 
 
 // The area of the circle

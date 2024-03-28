@@ -12,9 +12,10 @@
 // A line segment represented by 2 points (its two ends) as vec2s
 typedef struct
 {
-    vec2_t a;
-    vec2_t b;
-} lseg_t;
+  vec2_t a;
+  vec2_t b;
+}
+lseg_t;
 
 // The length of the line segment
 float cgSegLength(const lseg_t* s);
