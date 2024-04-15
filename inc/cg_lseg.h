@@ -1,4 +1,5 @@
 
+
 #ifndef CGEO_LSEG_H_
 
 #define CGEO_LSEG_H_
@@ -10,7 +11,7 @@
 
 
 // A line segment represented by 2 points (its two ends) as vec2s
-typedef struct
+typedef struct lseg_t
 {
   vec2_t a;
   vec2_t b;

@@ -1,4 +1,5 @@
 
+
 #ifndef CGEO_RECT_H_
 
 #define CGEO_RECT_H_
@@ -9,7 +10,7 @@
 
 // A 2D rectangle using float to store its x and y position and its width (w) and height(h)
 // (x, y) is the bottom left corner of the rect
-typedef struct
+typedef struct rect_t
 {
   float x;
   float y;

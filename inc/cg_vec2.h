@@ -1,4 +1,5 @@
 
+
 #ifndef CGEO_VEC2_H_
 
 #define CGEO_VEC2_H_
@@ -8,7 +9,7 @@
 
 
 // A 2D vector class using floats to store its x and y values
-typedef struct
+typedef struct vec2_t
 {
   float x;
   float y;

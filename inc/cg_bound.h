@@ -1,4 +1,5 @@
 
+
 #ifndef CGEO_BOUND_H_
 
 #define CGEO_BOUND_H_
@@ -8,7 +9,7 @@
 
 
 // A rectangle represented by its left right top and bottom edges as float coordinates
-typedef struct
+typedef struct bound_t
 {
     float left;
     float right;

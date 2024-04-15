@@ -1,4 +1,5 @@
 
+
 #ifndef CGEO_CIRC_H_
 
 #define CGEO_CIRC_H_
@@ -9,7 +10,7 @@
 
 // A circle using float to represent its x and y potision and its radius
 // (x, y) is the center of the circle
-typedef struct
+typedef struct circ_t
 {
   float x;
   float y;

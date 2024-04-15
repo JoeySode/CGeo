@@ -1,4 +1,5 @@
 
+
 #include "cg_quad.h"
 
 #include <math.h>
@@ -15,6 +16,19 @@ void cgQuadCenter(vec2_t* result, const quad_t* q)
   result->y = (q->a.y + q->b.y + q->c.y + q->d.y) / 4.0f;
 }
 
+void cgQuadFromRect(quad_t* result, const rect_t* r)
+{
+  const float left = r->x;
+  const float right = r->x + r->w;
+  const float bottom = r->y;
+  const float top = r->y + r->h;
+
+  result->a = (vec2_t){ left, bottom };
+  result->b = (vec2_t){ left, top };
+  result->c = (vec2_t){ right, top };
+  result->d = (vec2_t){ right, bottom };
+}
+
 void cgQuadFromRectRotated(quad_t* result, const rect_t* r, float angle)
 {
   float s = sinf(angle);
@@ -27,25 +41,25 @@ void cgQuadFromRectRotated(quad_t* result, const rect_t* r, float angle)
   float cy = r->y + (r->h / 2.0f);
 
   // Bottom left (a)
-  result->a.x = cx - (dx * c) + (dy * s);
-  result->a.y = cy - (dx * s) - (dy * c);
+  result->a.x = cx - (dx * c) - (dy * s);
+  result->a.y = cy + (dx * s) - (dy * c);
 
-  // Bottom right (b)
-  result->b.x = cx + (dx * c) + (dy * s);
-  result->b.y = cy + (dx * s) - (dy * c);
+  // Top left (b)
+  result->b.x = cx - (dx * c) + (dy * s);
+  result->b.y = cy - (dx * s) - (dy * c);
 
-  // Top left (c)
-  result->c.x = cx - (dx * c) - (dy * s);
-  result->c.y = cy - (dx * s) + (dy * c);
+  // Top right (c)
+  result->c.x = cx + (dx * c) - (dy * s);
+  result->c.y = cy + (dx * s) + (dy * c);
 
-  // Top right (d)
-  result->d.x = cx + (dx * c) - (dy * s);
-  result->d.y = cy + (dx * s) + (dy * c);
+  // Bottom right (d)
+  result->d.x = cx + (dx * c) + (dy * s);
+  result->d.y = cy - (dx * s) + (dy * c);
 }
 
 void cgQuadRotate(quad_t* q, float angle)
 {
-  float og_x; // Used to store the original x value for every vec2
+  float og_x;
 
   float s = sinf(angle);
   float c = cosf(angle);
@@ -57,16 +71,19 @@ void cgQuadRotate(quad_t* q, float angle)
 
   // Bottom right (b)
   og_x = q->b.x;
+
   q->b.x = (q->b.x * c) - (q->b.y * s);
   q->b.y = (og_x * s) + (q->b.y * c);
 
   // Top left (c)
   og_x = q->c.x;
+
   q->c.x = (q->c.x * c) - (q->c.y * s);
   q->c.y = (og_x * s) + (q->c.y * c);
 
   // Top right (d)
   og_x = q->d.x;
+
   q->d.x = (q->d.x * c) - (q->d.y * s);
   q->d.y = (og_x * s) + (q->d.y * c);
 }

@@ -12,17 +12,19 @@ To clean, run 'make clean' which will remove the build folder entirely.
 
 ## Usage
 
+```C
 float x, y;
 scanf("%f", &x);
-scanf("%f", %y);
+scanf("%f", &y);
 
-vec2_t v = { x, y};
+vec2_t v = { x, y };
 
-circ_t c = { -5.0f, 1.0f, 7.0f }; // x, y, radius
-rect_t r = { 0.0f, -4.0f, 2.0f, 5.0f }; // x, y, width, height
+circ_t c = (circ_t){ -5.0f, 1.0f, 7.0f }; // x, y, radius
+rect_t r = (rect_t){ 0.0f, -4.0f, 2.0f, 5.0f }; // x, y, width, height
 
 if (cgCollCircVec(&c, &v) || cgCollRectVec(&r, &v))
-    printf("Hit!\n");
+    printf("Hit\n");
+```
 
 ## Contributing
 
